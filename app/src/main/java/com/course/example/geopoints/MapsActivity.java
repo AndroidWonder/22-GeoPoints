@@ -6,6 +6,7 @@ import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,6 +51,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         address = (EditText) findViewById(R.id.myAddress);
         btnSearch = (Button) findViewById(R.id.myBtnSearch);
 
+
+        if (Geocoder.isPresent()) Log.e("GeoCoder", "Yes, it is"); else Log.e("GeoCoder", "No, it's not");
         gc = new Geocoder(this);  //create Geocoder object
 
     }
@@ -86,12 +89,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 try {
                     //get latitude/longitude pairs from location name
                     List<Address> FoundAddresses = gc.getFromLocationName(
-                            addressInput, locations);
+                          addressInput, locations);
+                    Toast.makeText(getApplicationContext(), addressInput, Toast.LENGTH_LONG).show();
 
                     if (FoundAddresses.size() == 0)
                         showInvalidAddressMsg();
                     else {
 
+                        Log.e("GeoPoint", "There are " + FoundAddresses.size() + " found.");
                         //loop over the locations found
                         for (int i = 0; i < FoundAddresses.size(); i++) {
 
