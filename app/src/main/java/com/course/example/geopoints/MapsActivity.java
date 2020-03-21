@@ -1,3 +1,5 @@
+//This app will go from a location to a latitude, longitude and street address where possible
+
 package com.course.example.geopoints;
 
 import android.app.Dialog;
@@ -47,7 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        Toast.makeText(this, "Try: MAIN STREET MA", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Try: JFK", Toast.LENGTH_LONG).show();
         address = (EditText) findViewById(R.id.myAddress);
         btnSearch = (Button) findViewById(R.id.myBtnSearch);
 
