@@ -124,6 +124,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         //move camera to last location found
                         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 4.0f));
+                        address.setText("");
                     }
                 } catch (Exception e) {
                     Toast.makeText(MapsActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
