@@ -58,8 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         gc = new Geocoder(this);  //create Geocoder object
 
     }
-
-
+    
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
