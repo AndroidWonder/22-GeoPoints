@@ -81,6 +81,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
         );
 
+        //enable a zoom control
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+
         btnSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String addressInput = address.getText().toString();
